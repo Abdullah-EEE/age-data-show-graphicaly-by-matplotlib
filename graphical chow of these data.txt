@@ -1,0 +1,54 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+from matplotlib import style
+
+plt.figure(figsize=(18,20))
+
+plt.subplot(3,2,1)
+y1=[120,50]
+x1=['Female','male']
+colors=['g','y']
+style.use('ggplot')
+plt.bar(x1,y1,color=colors,align='center')
+plt.title('GENDER VS PERSON NUMBER')
+plt.xlabel('Gender',)
+plt.ylabel('person number')
+
+plt.subplot(3,2,2)
+y2=[120,50]
+x2=['Female','male']
+textprops={'fontsize':15}
+explode=[0,0.1]
+colors=['g','y']
+style.use('ggplot')
+plt.pie(y2,labels=x2,explode=explode,startangle=90,autopct="%0.1f%%",radius=2,colors=colors,textprops=textprops)
+
+plt.subplot(3,2,3)
+mean1=[23.567,38.46]
+age1=["age 18-30",'age 31-50']
+colors1=['b','c']
+style.use('ggplot')
+plt.bar(age1,mean1,color=colors1,align='center')
+plt.title('Age vs Mean')
+plt.xlabel('Age',)
+plt.ylabel('Mean')
+
+
+
+plt.subplot(3,2,4)
+std1=[3.2480,5.253]
+age2=["age 18-30",'age 31-50']
+colors1=['y','r']
+style.use('ggplot')
+plt.bar(age2,std1,color=colors1,align='center')
+plt.title('Age vs standerddaviation')
+plt.xlabel('Age',)
+plt.ylabel('standerddaviation')
+
+
+plt.subplot(3,2,6,projection='polar',facecolor='k',frameon=True)
+plt.savefig("graphical anlysis jabedfinal.png")
+
+plt.show()               
+
